@@ -9,7 +9,7 @@ Jeremy Richards
 Orlando Fitzgerald-Leonard
 - s3670970
 - Map generation functionality
-- Fruit debut functionality
+- Fruit debuff functionality
 
 Lachlan Rogers
 - s3552956
