@@ -10,3 +10,6 @@ Orlando Fitzgerald-Leonard
 - s3670970
 - Map generation functionality
 - Fruit debut functionality
+
+Lachlan Rogers
+- s3552956
