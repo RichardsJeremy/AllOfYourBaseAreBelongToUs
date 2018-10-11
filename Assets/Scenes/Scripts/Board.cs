@@ -13,35 +13,42 @@ namespace Application
 
         private void CreateRandomBoard(int boardWidth, int boardHeight)
         {
-            int[,] gameBoard = new int[boardWidth,boardHeight];
+            int[,] gameBoard = new int[boardWidth, boardHeight];
 
             for (int counter = 0; counter < boardWidth; counter++)
             {
                 gameBoard[counter, 0] = 4;
                 gameBoard[counter, boardHeight - 1] = 5;
 
-                //This makes the top and bottom rows 4 and 5 respectively.
+                //This makes the top and bottom rows 4 and 5 respectively. This will facilitate Teleportation
             }
 
-            for (counter = 0; counter < boardHeight; counter++)
+            for (int counter = 0; counter < boardHeight; counter++)
             {
                 gameBoard[0, counter] = 6;
-                gameBoard[boardWidth -1, counter] = 7;
+                gameBoard[boardWidth - 1, counter] = 7;
 
-                //This makes the left and right rows 6 and 7 respectively.
+                //This makes the left and right rows 6 and 7 respectively. This will facilitate Teleportation
             }
 
-            for (int yAxis = 1; yAxis < boardHeight-1; yAxis++) //Starts on row2, ends row before last row.
+            for (int yAxis = 1; yAxis < boardHeight - 1; yAxis++) //Starts on row2, ends row before last row.
             {
-                for (int xAxis = 1; xAxis < boardWidth-1; xAxis++) //Starts on line 2, ends line before last line
+                for (int xAxis = 1; xAxis < boardWidth - 1; xAxis++) //Starts on line 2, ends line before last line
                 {
-
+                    randomize();
                 }
             }
 
+            gameBoard[0, 0] = 1;
+            gameBoard[boardWidth - 1, 0] = 1;
+            gameBoard[0, boardHeight - 1] = 1;
+            gameBoard[boardWidth - 1, boardHeight - 1] = 1;
+            //This makes all 4 corners 1 (blocks)
+
+
         }
 
-        
+
         /*private void CreateRowArray(int rowNumArray, int boardWidth, int boardHeight) //Doesn't work
         {
             int[] rowNumArray = new int[boardWidth];
@@ -120,10 +127,15 @@ namespace Application
                 rollTimes++;
             }
 
+            if (totalRoll == 10)
+            {
+                totalRoll--;
+                //if the roll is five 2s, this will make it 9, not 10.
+            }
             return totalRoll;
         }
 
-        public void createFruit()
+        /*public void createFruit()
         {
             //When called, this will place a fruit on the board via checking the
             //board to see if there are any fruit present, then, if there is 
@@ -133,7 +145,7 @@ namespace Application
             {
                 
             }
-        }
+        }*/
 
         public void steppedOnFruit()
         {
@@ -160,7 +172,7 @@ namespace Application
 
 
         }
-
+    }
 }
 
 
