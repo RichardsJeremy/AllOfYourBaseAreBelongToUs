@@ -11,18 +11,40 @@ namespace Application
         int counter;
         int unitSpeed = 10;*/
 
-        private void CreateBoard(int boardWidth, int boardHeight)
+        private void CreateRandomBoard(int boardWidth, int boardHeight)
         {
-            for (int counter = 0; counter < boardHeight; counter++)
+            int[,] gameBoard = new int[boardWidth,boardHeight];
+
+            for (int counter = 0; counter < boardWidth; counter++)
             {
-                CreateRowArray(counter, boardWidth, boardHeight);
+                gameBoard[counter, 0] = 4;
+                gameBoard[counter, boardHeight - 1] = 5;
+
+                //This makes the top and bottom rows 4 and 5 respectively.
             }
 
+            for (counter = 0; counter < boardHeight; counter++)
+            {
+                gameBoard[0, counter] = 6;
+                gameBoard[boardWidth -1, counter] = 7;
+
+                //This makes the left and right rows 6 and 7 respectively.
+            }
+
+            for (int yAxis = 1; yAxis < boardHeight-1; yAxis++) //Starts on row2, ends row before last row.
+            {
+                for (int xAxis = 1; xAxis < boardWidth-1; xAxis++) //Starts on line 2, ends line before last line
+                {
+
+                }
+            }
 
         }
-        private void CreateRowArray(int rowNumArray, int boardWidth, int boardHeight) //Doesn't work
+
+        
+        /*private void CreateRowArray(int rowNumArray, int boardWidth, int boardHeight) //Doesn't work
         {
-            int[] rowNumArray[] = new int[boardWidth];
+            int[] rowNumArray = new int[boardWidth];
             int arrayPlace = 0;
 
             //This will make the top and bottom row closed
@@ -53,7 +75,7 @@ namespace Application
             }
 
 
-        }
+        }*/
         private int randomize()
         {
             //Here I am seting up the percentages for the random tile function.
