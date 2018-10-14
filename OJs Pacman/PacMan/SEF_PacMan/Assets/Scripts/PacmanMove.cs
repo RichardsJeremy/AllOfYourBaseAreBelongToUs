@@ -49,4 +49,5 @@ bool valid(Vector2 dir)
     RaycastHit2D hit = Physics2D.Linecast(pos + dir, pos);
     return (hit.collider == GetComponent<Collider2D>());
 }
+
 }
